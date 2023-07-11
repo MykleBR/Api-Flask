@@ -1,0 +1,55 @@
+    Registro de usuário:
+        URL: /register
+        Método: POST
+        Corpo da solicitação: {"username": "example", "password": "password"}
+        Descrição: Cria um novo usuário com o nome de usuário e senha fornecidos.
+
+    Login de usuário:
+        URL: /login
+        Método: POST
+        Corpo da solicitação: {"username": "example", "password": "password"}
+        Descrição: Realiza o login do usuário e retorna os tokens de acesso e atualização.
+
+    Logout de usuário:
+        URL: /logout
+        Método: POST
+        Cabeçalho da solicitação: Authorization: Bearer <access_token>
+        Descrição: Invalida o token de acesso atual, tornando-o inválido para futuras solicitações.
+
+    Atualização do token de acesso:
+        URL: /token/refresh
+        Método: POST
+        Cabeçalho da solicitação: Authorization: Bearer <refresh_token>
+        Descrição: Gera um novo token de acesso com base no token de atualização fornecido.
+
+    Login com o Google(Não implementado):
+        URL: /login/google
+        Método: POST
+        Corpo da solicitação: {"code": "google_authorization_code"}
+        Descrição: Realiza o login do usuário usando a autenticação do Google e retorna os tokens de acesso e atualização.
+
+    Obter lista de usuários(Duas listas diferentes, uma para o admin outra para usuarios normais):
+        URL: /users
+        Método: GET
+        Cabeçalho da solicitação: Authorization: Bearer <access_token>
+        Descrição: Retorna uma lista de todos os usuários registrados. Requer privilégios de administrador para acesso completo.
+
+    Criar usuário:
+        URL: /users
+        Método: POST
+        Cabeçalho da solicitação: Authorization: Bearer <access_token>
+        Corpo da solicitação: {"username": "new_user", "password": "password", "is_admin": 0 ou 1(True ou False)}
+        Descrição: Cria um novo usuário com o nome de usuário, senha e status de acesso. Requer privilégios de administrador.
+
+    Atualizar usuário:
+        URL: /users/<user_id>
+        Método: PUT
+        Cabeçalho da solicitação: Authorization: Bearer <access_token>
+        Corpo da solicitação: {"username": "updated_user", "password": "new_password", "is_admin": 0 ou 1(True ou False)}
+        Descrição: Atualiza as informações do usuário especificado pelo ID. Requer privilégios de administrador.
+
+    Excluir usuário:
+        URL: /users/<user_id>
+        Método: DELETE
+        Cabeçalho da solicitação: Authorization: Bearer <access_token>
+        Descrição: Exclui o usuário especificado pelo ID. Requer privilégios de administrador.

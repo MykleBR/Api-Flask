@@ -1,0 +1,1 @@
+Essas configurações definem a chave secreta para criptografia de dados (SECRET_KEY), a URL de conexão com o banco de dados MySQL (SQLALCHEMY_DATABASE_URI), e desativa o rastreamento de modificações do SQLAlchemy (SQLALCHEMY_TRACK_MODIFICATIONS).
